@@ -2,17 +2,6 @@
 <html lang="en">
   <head>
     <style>
-      * {
-        -webkit-print-color-adjust: exact !important;
-        /* Chrome, Safari */
-        print-color-adjust: exact !important;
-        /* Standard */
-        -moz-print-color-adjust: exact !important;
-        /* Firefox */
-        padding: 0px !important;
-        margin: 0px !important;
-      }
-
       html,
       body {
         margin: 0;
@@ -29,60 +18,37 @@
 
       .container {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         background-color: rgb(255, 255, 255);
-        align-items: end;
-        width: 62mm;
-        height: 100mm;
+        align-items: center;
+        width: 100mm;
+        height: 62mm;
         border: 2px solid #004964;
       }
 
       .content {
-        height: 100%;
+        display: flex;
         width: 100%;
-
-        margin-left: 10px;
-      }
-
-      .visiter-img-con {
-        width: 100%;
+        padding-top: 20px;
       }
 
       .visiter-img {
         width: 130px;
         height: 140px;
         object-fit: cover;
+        margin-left: 15px;
         border: 2px solid #000000;
-        -ms-transform: rotate(-90deg);
-        -moz-transform: rotate(-90deg);
-        -webkit-transform: rotate(-90deg);
-        -o-transform: rotate(-90deg);
-        display: block;
-        margin-left: 22px;
-        margin-bottom: 8px;
-      }
-
-      .visitor-data {
-        width: 100%;
-        height: 100%;
-
-        rotate: -90deg;
-        margin-bottom: 16px;
       }
 
       .data-container {
         width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: end;
+        padding-left: 8px;
       }
 
       .visiter {
         font-size: 40px;
         letter-spacing: 1px;
         font-weight: 600;
-        margin-top: 5px;
       }
 
       hr {
@@ -100,11 +66,12 @@
         overflow: hidden;
         text-overflow: ellipsis;
         margin-top: 11px;
+        margin-bottom: 12px;
       }
 
       .date {
         font-size: 14px;
-        margin-top: 12px;
+        margin-top: 5px;
         font-weight: 500;
         display: flex;
         align-items: center;
@@ -113,20 +80,22 @@
 
       .date span {
         font-weight: 100;
+        margin-left: 3px;
         color: #222222;
       }
 
       .logo-company {
-        width: 100%;
+        width: 98%;
+        height: 100%;
         display: flex;
-        align-items: center;
+        align-items: end;
         justify-content: end;
+        padding-top: 2px;
       }
 
       .companylogo {
-        width: 125px;
-        padding-right: 24px;
-        margin-top: 20px;
+        width: 140px;
+        margin-right: 20px;
       }
     </style>
   </head>
@@ -134,21 +103,17 @@
   <body>
     <div class="container">
       <div class="content">
+        <img src="./download.jpg" class="visiter-img" alt="Logo" />
         <div class="data-container">
-          <div class="visiter-img-con">
-            <img src="./download.jpg" class="visiter-img" alt="Logo" />
-          </div>
-          <div class="visitor-data">
-            <div class="visiter">VISITOR</div>
-            <hr />
-            <div class="name">Seenivasan T</div>
-            <div class="date">DATE :<span>27-11-2024</span></div>
-            <div class="date">TIME :<span>06.14 pm</span></div>
-            <div class="logo-company">
-              <img src="./logo-black.png" class="companylogo" alt="Logo" />
-            </div>
-          </div>
+          <div class="visiter">VISITOR</div>
+          <hr />
+          <div class="name">Seenivasan T</div>
+          <div class="date">DATE :<span>05-20-1002</span></div>
+          <div class="date">TIME :<span>02.14 pm</span></div>
         </div>
+      </div>
+      <div class="logo-company">
+        <img src="./logo-black.png" class="companylogo" alt="Logo" />
       </div>
     </div>
 
@@ -178,167 +143,114 @@
                                     -webkit-print-color-adjust: exact !important; /* Chrome, Safari */
                                     print-color-adjust: exact !important;         /* Standard */
                                     -moz-print-color-adjust: exact !important;    /* Firefox */
-                                     padding: 0px !important;
-        margin: 0px !important;
                                 }
                                 @page {
-                                   
-                                    size: 62mm 100mm;
+                                    margin: 0;
+                                    size: 100mm 62mm;
                                     marks: crop cross;
-                                     padding: 0px !important;
-                                     margin: 0 !important;
                                    
                                 }
-                                       html,
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: sans-serif;
-            box-sizing: border-box;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: row;
-            background-color: rgb(255, 255, 255);
-            align-items: end;
-            width: 100%;
-            height: 100%;
-            
-        
-        }
-
-        .content {
-           
-            height: 100%;
-            width: 100%;
-         
-      margin-left: 10px;
-    
-        }
-.visiter-img-con{
-    width: 100%;
-   
-}
-        .visiter-img {
-            width: 130px;
-            height: 140px;
-            object-fit: cover;
-            border: 2px solid #000000;
-              -ms-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -webkit-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    display: block;
-    margin-left: 22px;
-    margin-bottom: 8px;
-        }
-
-.visitor-data{
-    width: 100%;
-    height: 100%;
-  
-    rotate: -90deg;
-   margin-bottom: 16px;
-}
-
-        .data-container {
-        
-         width: 100%;
-         height: 100%;
-           display: flex;
-           flex-direction: column-reverse;
-           align-items: end;
-        }
-
-        .visiter {
-            font-size: 40px;
-            letter-spacing: 1px;
-            font-weight: 600;
-              margin-top: 5px;
-        }
-
-        hr {
-            width: 85%;
-            margin: 0;
-            height: 3px;
-            background-color: #000000;
-            border: #000000;
-        }
-
-        .name {
-            font-size: 23px;
-            font-weight: 600;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            margin-top: 11px;
-           
-        }
-
-        .date {
-            font-size: 14px;
-           margin-top: 12px;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            color: #000000;
-        }
-
-        .date span {
-            font-weight: 100;
-            color: #222222;
-            margin-left:3px
-        }
-
-        .logo-company {
-       width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: end;
-            
-
-        }
-
-        .companylogo {
-            width: 125px;
-      padding-right: 24px;
-      margin-top: 20px;
-        }
+                                html, body {
+                                    margin: 0;
+                                    padding: 0;
+                                    font-family: Arial, sans-serif;
+                                    box-sizing: border-box;
+                                    width: 100%;
+                                    height: 100%;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                .container {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    width: 100%;
+                                    height: 100%;
+                                    
+                                }
+                                .content {
+                                    display: flex;
+                                    width: 100%;
+                                    padding-top: 20px;
+                                }
+                                .visiter-img {
+                                    width: 130px;
+                                    height: 140px;
+                                    object-fit: cover;
+                                    margin-left: 15px;
+                                    border: 2px solid #000000;
+                                }
+                                .data-container {
+                                    width: 100%;
+                                    padding-left: 8px;
+                                }
+                                .visiter {
+                                    font-size: 40px;
+                                    letter-spacing: 1px;
+                                    font-weight: 600;
+                                }
+                                hr {
+                                    width: 85%;
+                                    margin: 0;
+                                    height: 3px;
+                                    background-color: #000000;
+                                    border: #000000;
+                                }
+                                .name {
+                                    font-size: 23px;
+                                    font-weight: 600;
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    margin-top: 11px;
+                                    margin-bottom: 12px;
+                                }
+                                .date {
+                                    font-size: 14px;
+                                    margin-top: 5px;
+                                    font-weight: 500;
+                                    display: flex;
+                                    align-items: center;
+                                    color: #000000;
+                                }
+                                .date span {
+                                    font-weight: 100;
+                                    margin-left: 3px;
+                                    color: #222222;
+                                }
+                                .logo-company {
+                                    width: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: flex-end;
+                                    margin-top: 6px;
+                                    margin-right: 20px;
+                                }
+                                .companylogo {
+                                    width: 140px;
+                                    margin-right: 20px;
+                                }
                             }
                         </style>
                     </head>
                     <body>
-                       <div class="container">
-        <div class='content'>
-            <div class="data-container" >
-                <div class='visiter-img-con'>
-
-                    <img src="./download.jpg" class="visiter-img" alt="Logo" />
-                </div>
-                <div class="visitor-data">
-<div class="visiter">VISITOR</div>
-<hr/>
-<div class="name">Seenivasans T </div>
-<div class="date">VALID : <span>27-11-2024</span></div>
-<div class="date">TIME  : <span>06.14 pm</span></div>
-<div class="logo-company">
-    
-    <img src="./logo-black.png" class="companylogo" alt="Logo" />
-</div>
-                </div>
-
-</div>
-
-        </div>
-       
-    </div>
+                        <div class="container">
+                            <div class='content'>
+                                <img src="./download.jpg" class="visiter-img" alt="Logo" />
+                                <div class="data-container">
+                                    <div class="visiter">VISITOR</div>
+                                    <hr />
+                                    <div class="name">Seenivasan T</div>
+                                    <div class="date">VALID :<span>27-11-2024</span></div>
+                                    <div class="date">TIME :<span>06.14 pm</span></div>
+                                </div>
+                            </div>
+                            <div class="logo-company">
+                                <img src="./logo-black.png" class="companylogo" alt="Logo" />
+                            </div>
+                        </div>
                     </body>
                 </html>
             `);

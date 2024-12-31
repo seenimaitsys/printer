@@ -1,0 +1,396 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(255, 255, 255);
+            align-items: center;
+            width: 100mm;
+            height: 62mm;
+            border: 2px solid #004964;
+
+        }
+
+        .content {
+            display: flex;
+            width: 100%;
+
+            padding-top: 20px;
+
+        }
+
+        .visiter-img {
+            width: 130px;
+            height: 140px;
+            object-fit: cover;
+            margin-left: 15px;
+            border: 2px solid #000000
+        }
+
+        .data-container {
+
+            width: 100%;
+            padding-left: 8px;
+
+        }
+
+        .visiter {
+            font-size: 40px;
+            letter-spacing: 1px;
+            font-weight: 600;
+
+        }
+
+        hr {
+            width: 85%;
+            margin: 0;
+            height: 3px;
+            background-color: #000000;
+            border: #000000;
+        }
+
+        .name {
+            font-size: 23px;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-top: 11px;
+            margin-bottom: 12px;
+        }
+
+
+        .date {
+            font-size: 14px;
+            margin-top: 5px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            color: #000000;
+
+        }
+
+        .date span {
+            font-weight: 100;
+            margin-left: 3px;
+            color: #222222;
+        }
+
+        .logo-company {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            padding: 20px;
+            margin-right: 20px;
+        }
+
+        .companylogo {
+            width: 140px;
+            margin-right: 20px;
+        }
+
+        /* 2 card */
+        .container-1 {
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(255, 255, 255);
+            align-items: center;
+            width: 100mm;
+            height: 62mm;
+            border: 2px solid #004964;
+            margin-top: 25px;
+
+        }
+
+        .companylogo-con {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .companylogo2 {
+            width: 40%;
+
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .content-2 {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            border-bottom: 5px solid black;
+            border-top: 5px solid black;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .content-2 div {
+            width: 100%;
+        }
+
+        .content-2 div h1 {
+            font-weight: bold;
+            font-size: 45px;
+            color: #004964;
+
+        }
+
+        .content-2 div h3 {
+            font-weight: 500;
+            font-size: 25px;
+
+
+        }
+
+        .content-2 :where(h1, h3) {
+            text-align: center;
+            margin: 0;
+        }
+
+        .content-2 img {
+            width: 110px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 1px solid black;
+            margin-right: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class='content'>
+            <img src="./download.jpg" class="visiter-img" alt="Logo" />
+            <div class="data-container">
+                <div class="visiter">VISITOR</div>
+                <hr />
+                <div class="name">Seenivasan T</div>
+                <div class="date">DATE :<span>05-20-1002</span></div>
+                <div class="date">TIME :<span>02.14 pm</span></div>
+            </div>
+        </div>
+        <div class="logo-company">
+            <img src="./logo-black.png" class="companylogo" alt="Logo" />
+        </div>
+    </div>
+    <!-- <div class="container-1">
+        <div class='companylogo-con'>
+<img src="./color-logo.png" class="companylogo2" alt="Logo" />
+        </div>
+       <div class="content-2">
+<div>
+    <h3>Seenivasan T</h3>
+    <h1>VISITOR</h1>
+</div>
+
+<img src="./download.jpg"  alt="Logo" />
+       </div>
+       <p>VALID : <span>26/7/2020</span></p> 
+    </div> -->
+    <button id="printButton" style="margin-top: 10px;">Print Badge</button>
+    <script>
+        const printBadge = () => {
+            const width = Math.floor(window.innerWidth * 0.75);
+            const height = Math.floor(window.innerHeight * 0.75);
+
+            // Calculate the position to center the popup window
+            const left = Math.floor((window.innerWidth - width) / 2);
+            const top = Math.floor((window.innerHeight - height) / 2);
+
+            // Open the popup window with calculated dimensions and position
+            const windowPrint = window.open(
+                "",
+                "",
+                `width=${width},height=${height},left=${left},top=${top}`
+            );
+
+            windowPrint.document.write(`
+                <html>
+                    <head>
+                        <style>
+                            @media print {
+                                * {
+                                    -webkit-print-color-adjust: exact !important; /* Chrome, Safari */
+                                    print-color-adjust: exact !important;         /* Standard */
+                                    -moz-print-color-adjust: exact !important;    /* Firefox */
+                                }
+                                @page {
+                                    margin: 0;
+                                    size: 100mm 62mm landscape;
+                                    marks: crop cross;
+                                }
+                                html, body {
+                                    margin: 0;
+                                    padding: 0;
+                                    font-family: Arial, sans-serif;
+                                    box-sizing: border-box;
+                                    width: 100%;
+                                    height: 100%;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+
+                                .container {
+                                    display: flex;
+                                    flex-direction: column;
+                                    background-color: rgb(255, 255, 255);
+                                    align-items: center;
+                                    width: 100mm;
+                                    height: 62mm;
+                                    border: 2px solid #004964;
+                                }
+
+                                .content {
+                                    display: flex;
+                                    width: 100%;
+                                    padding-top: 20px;
+                                }
+
+                                .visiter-img {
+                                    width: 130px;
+                                    height: 140px;
+                                    object-fit: cover;
+                                    margin-left: 15px;
+                                    border: 2px solid #000000;
+                                }
+
+                                .data-container {
+                                    width: 100%;
+                                    padding-left: 8px;
+                                }
+
+                                .visiter {
+                                    font-size: 40px;
+                                    letter-spacing: 1px;
+                                    font-weight: 600;
+                                }
+
+                                hr {
+                                    width: 85%;
+                                    margin: 0;
+                                    height: 3px;
+                                    background-color: #000000;
+                                    border: #000000;
+                                }
+
+                                .name {
+                                    font-size: 23px;
+                                    font-weight: 600;
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    margin-top: 11px;
+                                    margin-bottom: 12px;
+                                }
+
+                                .date {
+                                    font-size: 14px;
+                                    margin-top: 5px;
+                                    font-weight: 500;
+                                    display: flex;
+                                    align-items: center;
+                                    color: #000000;
+                                }
+
+                                .date span {
+                                    font-weight: 100;
+                                    margin-left: 3px;
+                                    color: #222222;
+                                }
+
+                                .logo-company {
+                                    width: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: flex-end;
+                                    padding: 20px;
+                                    margin-right: 20px;
+                                }
+
+                                .companylogo {
+                                    width: 140px;
+                                    margin-right: 20px;
+                                }
+
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="container">
+                            <div class="content">
+                                <img src="./download.jpg" class="visiter-img" alt="Visitor Image" />
+                                <div class="data-container">
+                                    <div class="visiter">VISITOR</div>
+                                    <hr />
+                                    <div class="name">Seenivasan T</div>
+                                    <div class="date">DATE: <span>05-20-1002</span></div>
+                                    <div class="date">TIME: <span>02:14 pm</span></div>
+                                </div>
+                            </div>
+                            <div class="logo-company">
+                                <img src="./logo-black.png" class="companylogo" alt="Company Logo" />
+                            </div>
+                        </div>
+                    </body>
+                </html>
+            `);
+            windowPrint.document.close();
+
+            // // Use the image's onload event to trigger printing after the image has loaded
+            const img1 = windowPrint.document.querySelector(".visiter-img");
+            const img2 = windowPrint.document.querySelector(".companylogo");
+
+            // Function to check if both images are loaded
+            const checkImagesLoaded = () => {
+                if (img1.complete && img2.complete) {
+                    windowPrint.print();
+                    windowPrint.close();
+                }
+            };
+
+            // Attach the onload event to both images
+            img1.onload = checkImagesLoaded;
+            img2.onload = checkImagesLoaded;
+        };
+
+        document.getElementById("printButton").addEventListener("click", printBadge);
+    </script>
+
+
+</body>
+
+</html>

@@ -3,11 +3,15 @@
   <head>
     <style>
       * {
-        -webkit-print-color-adjust: exact !important; /* Chrome, Safari */
-        print-color-adjust: exact !important; /* Standard */
-        -moz-print-color-adjust: exact !important; /* Firefox */
+        -webkit-print-color-adjust: exact !important;
+        /* Chrome, Safari */
+        print-color-adjust: exact !important;
+        /* Standard */
+        -moz-print-color-adjust: exact !important;
+        /* Firefox */
         padding: 0px !important;
       }
+
       html,
       body {
         margin: 0;
@@ -175,19 +179,26 @@
                                     -moz-print-color-adjust: exact !important;    /* Firefox */
                                 }
                                 @page {
-                                    margin: 0;
-                                    size: 62mm 100mm;
+                                        margin-top: 0in;
+        margin-bottom: 0in;
+        margin-left: 0in;
+        margin-right: 0in;
+        scale: 1;
+                                    size: 62mm 100mm ;
                                     marks: crop cross;
                                    
                                 }
                                        html,
         body {
-            margin: 0;
+             margin-bottom: 0in;
+        margin-left: 0in;
+        margin-right: 0in;
+        scale: 1;
             padding: 0;
             font-family: sans-serif;
             box-sizing: border-box;
-            width: 100%;
-            height: 100%;
+            width: 62mm;
+            height: 100mm;
             display: flex;
             flex-direction: column;
             justify-content: center;
